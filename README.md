@@ -1,6 +1,6 @@
 # pyconzim2016
 
-#dependencies are pygame and cython
+dependencies are pygame and cython
 #pip install cython for windows, linux and mac
 
 #Install build dependencies (on linux):
