@@ -1,0 +1,52 @@
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import datetime datetime
+
+InitScreen:
+    transition:FadeTransition()
+    SecondScreen:
+    BoxLayoutScreen:
+
+<BoxLayoutScreen>:
+    BoxLayout:
+        name:'FirstScreen'
+
+        orientation:'vertical'
+        Button:
+            id:mybtn
+            text:'update label'
+            font_size:30
+            on_release:self.on_press_change
+        Button:
+            text:'another screen'
+        TextInput:
+            id:mytxtinput
+            size_hint:(1,0.4)
+        Label:
+            id:lbl
+            text:str(datetime.date.today())
+            font_size:20
+            color:(209, 18, 66)
+            italic:True
+
+<SecondScreen>:
+    BoxLayout:
+        name:'SecondScreen'
+        orientation:'vertical'
+
+        TextInput:
+            id:fname
+            size_hint:(1,0.4)
+
+        TextInput:
+            id:passwd
+            size_hint:(1,0.4)
+            password:True
+
+        Label:
+            id:validatelbl
+            text:'login'
+
+        Button:
+            id:loginbtn
+            text:'login'
+            on_press: root.validate()
